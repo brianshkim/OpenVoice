@@ -46,7 +46,7 @@ def split_audio_whisper(audio_path, audio_name, target_dir='processed'):
 
         # calculate confidence
         if len(w.words) > 0:
-            confidence = sum([s.probability for s in w.words]) / len(w.words)
+            confidence = sum(s.probability for s in w.words) / len(w.words)
         else:
             confidence = 0.
         # clean text
